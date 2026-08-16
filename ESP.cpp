@@ -2,6 +2,8 @@
  * PS4 Controller to NEMA 23 Stepper Motor Control
  * Using Bluepad32 library for ESP32
  * Board: DOIT ESP32 DEVKIT V1 (with Bluepad32)
+ * Version: 1.0.0
+ * Author: Adam Huda
  */
 
 #include <Bluepad32.h>
