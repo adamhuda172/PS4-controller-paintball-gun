@@ -23,16 +23,22 @@
 #define SOLENOID_PIN  23
 
 // ============ STEPPER SETTINGS ============
-#define MAX_SPEED         1500    // Reduced from 4000 for lower sensitivity
-#define MIN_SPEED         50
-#define DEADZONE          10      // Small deadzone for precise movements
+#define X_MAX_SPEED       2000    // X axis max speed (steps/sec)
+#define X_MIN_SPEED       100     // X axis min speed
+#define Y_MAX_SPEED       1200    // Y axis max speed (lower for stability)
+#define Y_MIN_SPEED       80      // Y axis min speed
+#define DEADZONE          25      // Joystick deadzone threshold
+#define ACCELERATION      500     // Steps/sec^2 for smooth ramping
 
 // ============ VARIABLES ============
 long xStepInterval = 0;
 long yStepInterval = 0;
+long xTargetInterval = 0;    // Target interval for acceleration
+long yTargetInterval = 0;    // Target interval for acceleration
 unsigned long xLastStep = 0;
 unsigned long yLastStep = 0;
 bool motorsEnabled = true;
+unsigned long lastAccelUpdate = 0;
 
 // Solenoid control
 unsigned long solenoidStartTime = 0;
